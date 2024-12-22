@@ -7,13 +7,13 @@ export const Header = () => `
     </header>
     <nav class="bg-white shadow-md p-2 sticky top-14">
       <ul id="nav-ul" class="flex justify-around">
-        ${renderLoginStatus()}
+        ${userNav()}
       </ul>
     </nav>
 `;
 
 // 로그인 여부에 따른 렌더링
-const renderLoginStatus = () => {
+const userNav = () => {
   const user = getLocalStorage("user") || "{}";
   const path = window.location.hash
     ? window.location.hash.slice(1)
